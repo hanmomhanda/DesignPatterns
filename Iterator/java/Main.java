@@ -1,4 +1,4 @@
-package iterator;
+package Iterator.java;
 
 public class Main {
 

@@ -1,4 +1,4 @@
-package adapter;
+package Adapter.java;
 
 public class Main {
 
