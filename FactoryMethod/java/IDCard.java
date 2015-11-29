@@ -1,6 +1,4 @@
-package factory.idcard;
-
-import factory.framework.Product;
+package FactoryMethod.java;
 
 public class IDCard implements Product {
 

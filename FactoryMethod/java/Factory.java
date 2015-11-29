@@ -1,4 +1,4 @@
-package factory.framework;
+package FactoryMethod.java;
 
 public abstract class Factory {
 	public final Product create(String owner) {

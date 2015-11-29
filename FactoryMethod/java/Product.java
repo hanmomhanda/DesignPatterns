@@ -1,4 +1,4 @@
-package factory.framework;
+package FactoryMethod.java;
 
 public interface Product {
 	public abstract void use();

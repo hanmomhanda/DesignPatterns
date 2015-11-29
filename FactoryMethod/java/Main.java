@@ -1,8 +1,4 @@
-package factory.main;
-
-import factory.framework.Factory;
-import factory.framework.Product;
-import factory.idcard.IDCardFactory;
+package FactoryMethod.java;
 
 public class Main {
 

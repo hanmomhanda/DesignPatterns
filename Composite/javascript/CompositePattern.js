@@ -5,13 +5,13 @@ var Component = function(name){
 Component.prototype.getValue = function(){
     // JavaScript에서는 부모의 메서드를 override하도록
     // 특별히 정해진 방법이 없다.
-    throw Error;
+    throw Error("This method should be overridden");
 };
 
 // 탐색기의 말단 파일 역할을 하는 Leaf
 var Leaf = function(name){
     Component.call(this, name);
-}
+};
 Leaf.prototype = Object.create(Component.prototype);
 Leaf.prototype.getValue = function(){
     return "(" + this.name + ")";
@@ -21,7 +21,7 @@ Leaf.prototype.getValue = function(){
 var Composite = function(name){
     Component.call(this, name);
     this.components = [];
-}
+};
 Composite.prototype = Object.create(Component.prototype);
 Composite.prototype.add = function(component){
     if(component) this.components.push(component);
@@ -46,6 +46,10 @@ Composite.prototype.getValue = function(){
 // Leaf.prototype.getValue = function() {
 //     return "~" + this.name + "~";
 // };
+
+
+
+
 
 (function() {
     var result;

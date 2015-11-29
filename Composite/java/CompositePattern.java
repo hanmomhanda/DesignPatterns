@@ -12,7 +12,8 @@ public class CompositePattern {
         Leaf leaf3 = new Leaf("leaf3");
         Leaf leaf4 = new Leaf("leaf4");
 
-        Link link1 = new Link("link1");
+        // 요구사항 변경에 의해 나중에 추가
+//        Link link1 = new Link("link1");
 
         Composite composite1 = new Composite("List1");
         Composite composite2 = new Composite("List2");
@@ -20,7 +21,8 @@ public class CompositePattern {
         Composite composite3 = new Composite("List3");
 
         composite1.add(leaf1).add(leaf2);
-        composite1.add(link1);
+        // 요구사항 변경에 의해 나중에 추가
+//        composite1.add(link1);
         composite2.add(leaf3).add(leaf4);
 
         composite3.add(leaf1)
@@ -30,9 +32,15 @@ public class CompositePattern {
                   .add(composite2)
                   .add(leaf4);
 
+        // 요구사항 변경에 의해 링크라는 컴포넌트가 추가되어도
+        // 아래의 코드는 변경되지 않음
         System.out.println(composite3.getValue());
     }
 }
+
+
+
+
 
 interface Component {
     String getValue();
@@ -78,15 +86,16 @@ class Composite implements Component {
     }
 }
 
-class Link implements Component {
-    private String name;
-
-    public Link(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public String getValue() {
-        return "~"+name+"~";
-    }
-}
+// 요구사항 변경에 의해 나중에 추가되는 바로가기
+//class Link implements Component {
+//    private String name;
+//
+//    public Link(String name) {
+//        this.name = name;
+//    }
+//
+//    @Override
+//    public String getValue() {
+//        return "~"+name+"~";
+//    }
+//}
