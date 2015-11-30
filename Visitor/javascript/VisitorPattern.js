@@ -26,6 +26,15 @@ CurlyBraceElement.prototype.doElementThing = function(){
     return "{" + this.name + "}";
 };
 
+// 요구사항 변경으로 나중에 추가
+//var AsteriskElement = function(name){
+//    Element.call(this, name);
+//};
+//AsteriskElement.prototype = Object.create(Element.prototype);
+//AsteriskElement.prototype.doElementThing = function(){
+//    return "*" + this.name + "*";
+//};
+
 
 
 
@@ -52,16 +61,20 @@ var uppercaseVisitor = function(element) {
     elements.push(new CurlyBraceElement("CurlyBrace3"));
     elements.push(new BracketElement("Bracket4"));
     elements.push(new BracketElement("Bracket5"));
+    // 요구사항 변경으로 나중에 추가
+    //elements.push(new AsteriskElement("Asterisk1"));
     elements.push(new CurlyBraceElement("CurlyBrace4"));
 
     console.log("========== Lowercase Visitor ==========");
-
+    // 요구사항 변경으로 Element의 child가 새로 추가되어도
+    // 아래 코드는 변하지 않음
     for(i in elements){
         elements[i].accept(lowercaseVisitor);
     }
 
     console.log("========== Uppercase Visitor ==========");
-
+    // 요구사항 변경으로 Element의 child가 새로 추가되어도
+    // 아래 코드는 변하지 않음
     for(i in elements){
         elements[i].accept(uppercaseVisitor);
     }

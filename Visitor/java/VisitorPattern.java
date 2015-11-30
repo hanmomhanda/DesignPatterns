@@ -15,7 +15,7 @@ public class VisitorPattern {
         elements.add(new BracketElement("Bracket4"));
         elements.add(new BracketElement("Bracket5"));
         // 요구사항 변경으로 나중에 추가
-        elements.add(new AsteriskElement("Asterisk1"));
+//        elements.add(new AsteriskElement("Asterisk1"));
         elements.add(new CurlyBraceElement("CurlyBrace4"));
 
         System.out.println("========== Lowercase Visitor ==========");
@@ -82,23 +82,23 @@ class CurlyBraceElement implements Element {
 }
 
 // 요구사항 변경으로 나중에 추가
-class AsteriskElement implements Element {
-    private String name;
-
-    public AsteriskElement(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public void accept(Visitor visitor) {
-        visitor.visit(this);
-    }
-
-    @Override
-    public String doElementThing() {
-        return "*" + name + "*";
-    }
-}
+//class AsteriskElement implements Element {
+//    private String name;
+//
+//    public AsteriskElement(String name) {
+//        this.name = name;
+//    }
+//
+//    @Override
+//    public void accept(Visitor visitor) {
+//        visitor.visit(this);
+//    }
+//
+//    @Override
+//    public String doElementThing() {
+//        return "*" + name + "*";
+//    }
+//}
 
 
 
