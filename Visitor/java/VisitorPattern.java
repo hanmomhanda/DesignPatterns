@@ -14,17 +14,21 @@ public class VisitorPattern {
         elements.add(new CurlyBraceElement("CurlyBrace3"));
         elements.add(new BracketElement("Bracket4"));
         elements.add(new BracketElement("Bracket5"));
+        // 요구사항 변경으로 나중에 추가
+        elements.add(new AsteriskElement("Asterisk1"));
         elements.add(new CurlyBraceElement("CurlyBrace4"));
 
         System.out.println("========== Lowercase Visitor ==========");
-
+        // 요구사항 변경으로 Element의 child가 새로 추가되어도
+        // 아래 코드는 변하지 않음
         LowercaseVisitor lowercaseVisitor = new LowercaseVisitor();
         for (Element element : elements) {
             element.accept(lowercaseVisitor);
         }
 
         System.out.println("========== Uppercase Visitor ==========");
-
+        // 요구사항 변경으로 Element의 child가 새로 추가되어도
+        // 아래 코드는 변하지 않음
         UppercaseVisitor uppercaseVisitor = new UppercaseVisitor();
         for (Element element : elements) {
             element.accept(uppercaseVisitor);
@@ -74,6 +78,25 @@ class CurlyBraceElement implements Element {
     @Override
     public String doElementThing() {
         return "{" + name + "}";
+    }
+}
+
+// 요구사항 변경으로 나중에 추가
+class AsteriskElement implements Element {
+    private String name;
+
+    public AsteriskElement(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
+    }
+
+    @Override
+    public String doElementThing() {
+        return "*" + name + "*";
     }
 }
 

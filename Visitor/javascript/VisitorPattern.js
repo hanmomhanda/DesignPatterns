@@ -5,8 +5,8 @@ Element.prototype.accept = function(visitor){
     visitor(this);
 };
 Element.prototype.doElementThing = function(){
-    // JavaScript¿¡¼­´Â ºÎ¸ğÀÇ ¸Ş¼­µå¸¦ overrideÇÏµµ·Ï
-    // Æ¯º°È÷ Á¤ÇØÁø ¹æ¹ıÀÌ ¾ø´Ù.
+    // JavaScriptì—ì„œëŠ” ë¶€ëª¨ì˜ ë©”ì„œë“œë¥¼ overrideí•˜ë„ë¡
+    // íŠ¹ë³„íˆ ì •í•´ì§„ ë°©ë²•ì´ ì—†ë‹¤.
     throw Error("This method should be overridden");
 };
 
