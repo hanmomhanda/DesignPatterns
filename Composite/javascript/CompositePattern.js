@@ -4,7 +4,8 @@ var Component = function(name){
 };
 Component.prototype.getValue = function(){
     // JavaScript에서는 부모의 메서드를 override하도록
-    // 특별히 정해진 방법이 없다.
+    // 강제할 수 있는 방법이 없다.
+    // 따라서 override 안된 경우 강제로 에러 처리
     throw Error("This method should be overridden");
 };
 
