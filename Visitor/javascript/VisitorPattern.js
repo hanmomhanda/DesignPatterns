@@ -37,8 +37,6 @@ CurlyBraceElement.prototype.doElementThing = function(){
 
 
 
-
-
 var lowercaseVisitor = function(element) {
     console.log('ElementName : ' +  element.doElementThing().toLowerCase());
 };
@@ -46,8 +44,6 @@ var lowercaseVisitor = function(element) {
 var uppercaseVisitor = function(element) {
     console.log('ElementName : ' +  element.doElementThing().toUpperCase());
 };
-
-
 
 
 

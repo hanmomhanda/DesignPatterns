@@ -38,8 +38,6 @@ public class VisitorPattern {
 
 
 
-
-
 interface Element {
     void accept(Visitor visitor);
     String doElementThing();
@@ -99,8 +97,6 @@ class CurlyBraceElement implements Element {
 //        return "*" + name + "*";
 //    }
 //}
-
-
 
 
 

@@ -26,17 +26,15 @@ public class StrategyPattern {
         fighter.move();
         fighter.attack();
 
-        // 나중에 추가
-        fighter.setMovingStrategy(new CrawlingStrategy());
-        fighter.setAttackStrategy(new TackleStrategy());
-        System.out.println("===== Crawl + Tackle =====");
-        // 이동이나 공격전략이 어떻게 변경되도 아래의 코드는 변하지 않는다.
-        fighter.move();
-        fighter.attack();
+//        // 나중에 추가
+//        fighter.setMovingStrategy(new CrawlingStrategy());
+//        fighter.setAttackStrategy(new TackleStrategy());
+//        System.out.println("===== Crawl + Tackle =====");
+//        // 이동이나 공격전략이 어떻게 변경되도 아래의 코드는 변하지 않는다.
+//        fighter.move();
+//        fighter.attack();
     }
 }
-
-
 
 
 
@@ -63,8 +61,6 @@ class Fighter {
 
 
 
-
-
 interface MovingStrategy {
     void move();
 }
@@ -83,15 +79,13 @@ class WalkingStrategy implements MovingStrategy {
     }
 }
 
-// 나중에 추가
-class CrawlingStrategy implements MovingStrategy {
-    @Override
-    public void move() {
-        System.out.println("CRAWLING...");
-    }
-}
-
-
+//// 나중에 추가
+//class CrawlingStrategy implements MovingStrategy {
+//    @Override
+//    public void move() {
+//        System.out.println("CRAWLING...");
+//    }
+//}
 
 
 

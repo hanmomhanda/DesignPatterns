@@ -50,8 +50,6 @@ Composite.prototype.getValue = function(){
 
 
 
-
-
 (function() {
     var result;
 

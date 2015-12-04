@@ -12,7 +12,7 @@ public class CompositePattern {
         Leaf leaf3 = new Leaf("leaf3");
         Leaf leaf4 = new Leaf("leaf4");
 
-        // ¿ä±¸»çÇ× º¯°æ¿¡ ÀÇÇØ ³ªÁß¿¡ Ãß°¡
+        // ìš”êµ¬ì‚¬í•­ ë³€ê²½ì— ì˜í•´ ë‚˜ì¤‘ì— ì¶”ê°€
 //        Link link1 = new Link("link1");
 
         Composite composite1 = new Composite("List1");
@@ -21,7 +21,7 @@ public class CompositePattern {
         Composite composite3 = new Composite("List3");
 
         composite1.add(leaf1).add(leaf2);
-        // ¿ä±¸»çÇ× º¯°æ¿¡ ÀÇÇØ ³ªÁß¿¡ Ãß°¡
+        // ìš”êµ¬ì‚¬í•­ ë³€ê²½ì— ì˜í•´ ë‚˜ì¤‘ì— ì¶”ê°€
 //        composite1.add(link1);
         composite2.add(leaf3).add(leaf4);
 
@@ -32,13 +32,11 @@ public class CompositePattern {
                   .add(composite2)
                   .add(leaf4);
 
-        // ¿ä±¸»çÇ× º¯°æ¿¡ ÀÇÇØ ¸µÅ©¶ó´Â ÄÄÆ÷³ÍÆ®°¡ Ãß°¡µÇ¾îµµ
-        // ¾Æ·¡ÀÇ ÄÚµå´Â º¯°æµÇÁö ¾ÊÀ½
+        // ìš”êµ¬ì‚¬í•­ ë³€ê²½ì— ì˜í•´ ë§í¬ë¼ëŠ” ì»´í¬ë„ŒíŠ¸ê°€ ì¶”ê°€ë˜ì–´ë„
+        // ì•„ë˜ì˜ ì½”ë“œëŠ” ë³€ê²½ë˜ì§€ ì•ŠìŒ
         System.out.println(composite3.getValue());
     }
 }
-
-
 
 
 
@@ -86,7 +84,7 @@ class Composite implements Component {
     }
 }
 
-// ¿ä±¸»çÇ× º¯°æ¿¡ ÀÇÇØ ³ªÁß¿¡ Ãß°¡µÇ´Â ¹Ù·Î°¡±â
+// ìš”êµ¬ì‚¬í•­ ë³€ê²½ì— ì˜í•´ ë‚˜ì¤‘ì— ì¶”ê°€ë˜ëŠ” ë°”ë¡œê°€ê¸°
 //class Link implements Component {
 //    private String name;
 //
