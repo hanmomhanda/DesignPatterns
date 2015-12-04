@@ -26,7 +26,8 @@ public class StrategyPattern {
         fighter.move();
         fighter.attack();
 
-//        // 나중에 추가
+//        // 요구 사항 변경에 의해 새로운 전략이 추가되어도
+//        //  fighter.move(), fighter.attack()은 변하지 않음
 //        fighter.setMovingStrategy(new CrawlingStrategy());
 //        fighter.setAttackStrategy(new TackleStrategy());
 //        System.out.println("===== Crawl + Tackle =====");
@@ -79,7 +80,7 @@ class WalkingStrategy implements MovingStrategy {
     }
 }
 
-//// 나중에 추가
+//// 요구사항 변경에 의해 나중에 추가
 //class CrawlingStrategy implements MovingStrategy {
 //    @Override
 //    public void move() {
@@ -107,10 +108,10 @@ class PunchStrategy implements AttackStrategy {
     }
 }
 
-// 나중에 추가
-class TackleStrategy implements AttackStrategy {
-    @Override
-    public void attack() {
-        System.out.println("tackle!!!");
-    }
-}
+//// 요구사항 변경에 의해 나중에 추가
+//class TackleStrategy implements AttackStrategy {
+//    @Override
+//    public void attack() {
+//        System.out.println("tackle!!!");
+//    }
+//}

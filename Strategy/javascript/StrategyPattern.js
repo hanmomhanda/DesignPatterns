@@ -24,9 +24,10 @@ var flyingStrategy = function() {
 var walkingStrategy = function() {
     console.log("WALKING...");
 };
-var crawlingStrategy = function() {
-    console.log("CRAWLING...");
-};
+//// 요구 사항 변경에 의해 나중에 추가
+//var crawlingStrategy = function() {
+//    console.log("CRAWLING...");
+//};
 
 
 
@@ -36,9 +37,10 @@ var kickStrategy = function() {
 var punchStrategy = function() {
     console.log("punch!!!");
 };
-var tackleStrategy = function() {
-    console.log("tackle!!!");
-};
+//// 요구 사항 변경에 의해 나중에 추가
+//var tackleStrategy = function() {
+//    console.log("tackle!!!");
+//};
 
 
 
@@ -59,10 +61,12 @@ var tackleStrategy = function() {
     fighter.move();
     fighter.attack();
 
-    fighter.setMovingStrategy(crawlingStrategy);
-    fighter.setAttackingStrategy(tackleStrategy);
-    console.log("===== Crawling + Tackle =====");
-    // 이동이나 공격전략이 어떻게 변경되도 아래의 코드는 변하지 않는다.
-    fighter.move();
-    fighter.attack();
+    //// 요구 사항 변경에 의해 아래와 같은 새로운 전략이 추가되어도
+    //// fighter.move(), fighter.attack() 은 변경되지 않음
+    //fighter.setMovingStrategy(crawlingStrategy);
+    //fighter.setAttackingStrategy(tackleStrategy);
+    //console.log("===== Crawling + Tackle =====");
+    //// 이동이나 공격전략이 어떻게 변경되도 아래의 코드는 변하지 않는다.
+    //fighter.move();
+    //fighter.attack();
 })();
