@@ -1,11 +1,12 @@
 var Light = function(){
-    this.state = off;
-};
-Light.prototype.triggerStateChange = function(){
-    this.state.applyNextState(this);
-};
-Light.prototype.setState = function(state){
-    this.state = state;
+    var _state = off,
+        self = this;
+    this.triggerStateChange = function(){
+        _state.applyNextState(self);
+    };
+    this.setState = function(state){
+        _state = state;
+    };
 };
 
 
