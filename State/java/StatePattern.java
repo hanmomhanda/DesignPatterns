@@ -8,6 +8,7 @@ public class StatePattern {
         // Client가 알고, Client가 직접 Context에게 Strategy를 주입하지만
         // State 패턴에서는 Context에 주입해 줄 State를
         // Client가 알지 못하며, 상태 변화를 유발하는 행위를 호출할 뿐이다.
+        // Blink 모드가 추가되어도 아래의 코드는 변경되지 않는다.
         light.triggerStateChange();
         light.triggerStateChange();
         light.triggerStateChange();
