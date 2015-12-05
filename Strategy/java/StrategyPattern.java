@@ -12,14 +12,14 @@ public class StrategyPattern {
         PunchStrategy punchStrategy = new PunchStrategy();
 
 
-        fighter.setMovingStrategy(flyingStrategy);
+        fighter.setMoveStrategy(flyingStrategy);
         fighter.setAttackStrategy(kickStrategy);
         System.out.println("===== Flying + Kick =====");
         // 이동이나 공격전략이 어떻게 변경되도 아래의 코드는 변하지 않는다.
         fighter.move();
         fighter.attack();
 
-        fighter.setMovingStrategy(walkingStrategy);
+        fighter.setMoveStrategy(walkingStrategy);
         fighter.setAttackStrategy(punchStrategy);
         System.out.println("===== Walking + Punch =====");
         // 이동이나 공격전략이 어떻게 변경되도 아래의 코드는 변하지 않는다.
@@ -28,7 +28,7 @@ public class StrategyPattern {
 
 //        // 요구 사항 변경에 의해 새로운 전략이 추가되어도
 //        //  fighter.move(), fighter.attack()은 변하지 않음
-//        fighter.setMovingStrategy(new CrawlingStrategy());
+//        fighter.setMoveStrategy(new CrawlingStrategy());
 //        fighter.setAttackStrategy(new TackleStrategy());
 //        System.out.println("===== Crawl + Tackle =====");
 //        // 이동이나 공격전략이 어떻게 변경되도 아래의 코드는 변하지 않는다.
@@ -40,11 +40,11 @@ public class StrategyPattern {
 
 
 class Fighter {
-    private MovingStrategy movingStrategy;
+    private MoveStrategy moveStrategy;
     private AttackStrategy attackStrategy;
 
-    public void setMovingStrategy(MovingStrategy movingStrategy) {
-        this.movingStrategy = movingStrategy;
+    public void setMoveStrategy(MoveStrategy moveStrategy) {
+        this.moveStrategy = moveStrategy;
     }
 
     public void setAttackStrategy(AttackStrategy attackStrategy) {
@@ -52,7 +52,7 @@ class Fighter {
     }
 
     public void move() {
-        movingStrategy.move();
+        moveStrategy.move();
     }
 
     public void attack() {
@@ -62,18 +62,18 @@ class Fighter {
 
 
 
-interface MovingStrategy {
+interface MoveStrategy {
     void move();
 }
 
-class FlyingStrategy implements MovingStrategy {
+class FlyingStrategy implements MoveStrategy {
     @Override
     public void move() {
         System.out.println("FLYING...");
     }
 }
 
-class WalkingStrategy implements MovingStrategy {
+class WalkingStrategy implements MoveStrategy {
     @Override
     public void move() {
         System.out.println("WALKING...");
@@ -81,7 +81,7 @@ class WalkingStrategy implements MovingStrategy {
 }
 
 //// 요구사항 변경에 의해 나중에 추가
-//class CrawlingStrategy implements MovingStrategy {
+//class CrawlingStrategy implements MoveStrategy {
 //    @Override
 //    public void move() {
 //        System.out.println("CRAWLING...");
