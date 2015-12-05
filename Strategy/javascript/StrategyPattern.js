@@ -1,19 +1,17 @@
 var Fighter = function() {
     var _movingStrategy, _attackStrategy;
-    return {
-        setMovingStrategy: function(movingStrategy) {
-            _movingStrategy = movingStrategy;
-        },
-        setAttackingStrategy: function(attackStrategy) {
-            _attackStrategy = attackStrategy;
-        },
-        move: function() {
-            _movingStrategy();
-        },
-        attack: function() {
-            _attackStrategy();
-        }
-    }
+    this.setMoveStrategy = function(movingStrategy) {
+        _movingStrategy = movingStrategy;
+    },
+    this.setAttackStrategy = function(attackStrategy) {
+        _attackStrategy = attackStrategy;
+    },
+    this.move = function() {
+        _movingStrategy();
+    },
+    this.attack = function() {
+        _attackStrategy();
+    };
 };
 
 
@@ -47,15 +45,15 @@ var punchStrategy = function() {
 (function() {
     var fighter = new Fighter();
 
-    fighter.setMovingStrategy(flyingStrategy);
-    fighter.setAttackingStrategy(kickStrategy);
+    fighter.setMoveStrategy(flyingStrategy);
+    fighter.setAttackStrategy(kickStrategy);
     console.log("===== Flying + Kick =====");
     // 이동이나 공격전략이 어떻게 변경되도 아래의 코드는 변하지 않는다.
     fighter.move();
     fighter.attack();
 
-    fighter.setMovingStrategy(walkingStrategy);
-    fighter.setAttackingStrategy(punchStrategy);
+    fighter.setMoveStrategy(walkingStrategy);
+    fighter.setAttackStrategy(punchStrategy);
     console.log("===== Walking + Punch =====");
     // 이동이나 공격전략이 어떻게 변경되도 아래의 코드는 변하지 않는다.
     fighter.move();
@@ -63,8 +61,8 @@ var punchStrategy = function() {
 
     //// 요구 사항 변경에 의해 아래와 같은 새로운 전략이 추가되어도
     //// fighter.move(), fighter.attack() 은 변경되지 않음
-    //fighter.setMovingStrategy(crawlingStrategy);
-    //fighter.setAttackingStrategy(tackleStrategy);
+    //fighter.setMoveStrategy(crawlingStrategy);
+    //fighter.setAttackStrategy(tackleStrategy);
     //console.log("===== Crawling + Tackle =====");
     //// 이동이나 공격전략이 어떻게 변경되도 아래의 코드는 변하지 않는다.
     //fighter.move();
