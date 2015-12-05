@@ -14,6 +14,7 @@ var Leaf = function(name){
     Component.call(this, name);
 };
 Leaf.prototype = Object.create(Component.prototype);
+Leaf.prototype.constructor = Leaf;
 Leaf.prototype.getValue = function(){
     return "(" + this.name + ")";
 };
@@ -24,6 +25,7 @@ var Composite = function(name){
     this.components = [];
 };
 Composite.prototype = Object.create(Component.prototype);
+Composite.prototype.constructor = Composite;
 Composite.prototype.add = function(component){
     if(component) this.components.push(component);
     return this;
