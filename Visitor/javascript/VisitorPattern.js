@@ -36,7 +36,9 @@ CurlyBraceElement.prototype.doElementThing = function(){
 //};
 
 
-
+// Visitor는 어차피 함수 하나이고,
+// JavaScript는 함수를 파라미터로 넘길 수 있으므로
+// Java 처럼 굳이 interface를 만들 필요 없이 그냥 함수로만 작성해도 된다.
 var lowercaseVisitor = function(element) {
     console.log('ElementName : ' +  element.doElementThing().toLowerCase());
 };
