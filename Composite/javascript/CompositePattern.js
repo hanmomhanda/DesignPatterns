@@ -27,7 +27,7 @@ var Composite = function(name){
 Composite.prototype = Object.create(Component.prototype);
 Composite.prototype.constructor = Composite;
 Composite.prototype.add = function(component){
-    if(component) this.components.push(component);
+    if(component && component instanceof Component) this.components.push(component);
     return this;
 };
 Composite.prototype.getValue = function(){
@@ -75,6 +75,7 @@ Composite.prototype.getValue = function(){
               .add(composite1)
               .add(leaf2)
               .add(leaf3)
+        .add([0])
               .add(composite2)
               .add(leaf4);
 
