@@ -26,6 +26,7 @@ public class TemplateMethodPattern {
 abstract class Template {
 
     // Template Method
+    // 상속 받는 클래스에서 순서를 바꾸지 못하도록 final 지정
     public final void showDailyLife() {
         wakeUp();
         go2Work();
