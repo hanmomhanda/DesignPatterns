@@ -9,7 +9,7 @@ var Template = function(){
     var go2Sleep = function(){
         console.log("***** Sweet Dream *****");
     };
-    // Template 메서드
+    // 실질적인 Template 메서드
     // prototype에서 wakeUp과 go2Sleep 같은
     // private 메서드에 접근할 수 있게 해주는 privileged 메서드
     this.showDailyLife = function(){
@@ -26,15 +26,15 @@ var Template = function(){
 Template.prototype.showDailyLife = function(){
     this.showDailyLife();
 };
-// Tempate 인스턴스마다 달라지는 출근 방식
+// Tempate을 상속받은 객체마다 달라지는 출근 방식
 Template.prototype.go2Work = function(){
     throw Error("This method should be overridden");
 };
-// Tempate 인스턴스마다 달라지는 일과
+// Tempate을 상속받은 객체마다 달라지는 일과
 Template.prototype.workHard = function(){
     throw Error("This method should be overridden");
 };
-// Tempate 인스턴스마다 달라지는 퇴근 방식
+// Tempate을 상속받은 객체마다 달라지는 퇴근 방식
 Template.prototype.comeback2Home = function(){
     throw Error("This method should be overridden");
 };
