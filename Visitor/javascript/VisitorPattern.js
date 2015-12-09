@@ -14,6 +14,7 @@ var BracketElement = function(name){
     Element.call(this, name);
 };
 BracketElement.prototype = Object.create(Element.prototype);
+BracketElement.prototype.constructor = BracketElement;
 BracketElement.prototype.doElementThing = function(){
     return "<" + this.name + ">";
 };
@@ -22,6 +23,7 @@ var CurlyBraceElement = function(name){
     Element.call(this, name);
 };
 CurlyBraceElement.prototype = Object.create(Element.prototype);
+CurlyBraceElement.prototype.constructor = CurlyBraceElement;
 CurlyBraceElement.prototype.doElementThing = function(){
     return "{" + this.name + "}";
 };
@@ -31,6 +33,7 @@ CurlyBraceElement.prototype.doElementThing = function(){
 //    Element.call(this, name);
 //};
 //AsteriskElement.prototype = Object.create(Element.prototype);
+//AsteriskElement.prototype.constructor = AsteriskElement
 //AsteriskElement.prototype.doElementThing = function(){
 //    return "*" + this.name + "*";
 //};
