@@ -9,6 +9,7 @@ var Template = function(){
     var go2Sleep = function(){
         console.log("***** Sweet Dream *****");
     };
+    // Template 메서드
     // prototype에서 wakeUp과 go2Sleep 같은
     // private 메서드에 접근할 수 있게 해주는 privileged 메서드
     this.showDailyLife = function(){
