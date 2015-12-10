@@ -3,7 +3,10 @@ var Button = function(){
     var _command;
 
     this.setCommand = function(command){
-        _command = command;
+        if (command instanceof Command)
+            _command = command;
+        else
+            throw new Error("command should be instanceof Command");
     };
 
     this.pressed = function(){
@@ -26,7 +29,12 @@ var Light = function(){
 
 
 // Command
-var Command = function(){};
+var Command = function(light){
+    if (light instanceof Light)
+        this.light = light;
+    else
+        throw new Error("light should be instanceof Light");
+};
 Command.prototype.execute = function(){
     // JavaScript에서는 부모의 메서드를 override하도록
     // 강제할 수 있는 방법이 없다.
@@ -35,7 +43,7 @@ Command.prototype.execute = function(){
 };
 
 var TurnOnCommand = function(light){
-    this.light = light;
+    Command.call(this, light);
 };
 TurnOnCommand.prototype = Object.create(Command.prototype);
 TurnOnCommand.prototype.constructor = TurnOnCommand;
@@ -44,7 +52,7 @@ TurnOnCommand.prototype.execute = function(){
 };
 
 var TurnOffCommand = function(light){
-    this.light = light;
+    Command.call(this, light);
 };
 TurnOffCommand.prototype = Object.create(Command.prototype);
 TurnOffCommand.prototype.constructor = TurnOffCommand;
