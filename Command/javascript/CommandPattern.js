@@ -74,4 +74,6 @@ TurnOffCommand.prototype.execute = function(){
     button.setCommand(new TurnOnCommand(light));
     button.pressed();
 
+    //커맨드 추가 TODO
+
 })();
