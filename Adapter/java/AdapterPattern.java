@@ -42,7 +42,7 @@ class Adapter implements Target {
 }
 
 
-// Adapter에 의해 맞춰질 Old type
+// Adapter에 의해 New type으로 맞춰질 Old type
 class Adaptee {
 
     private String s;
