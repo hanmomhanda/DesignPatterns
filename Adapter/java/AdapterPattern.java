@@ -3,14 +3,14 @@ package Adapter.java;
 public class AdapterPattern {
 
     public static void main(String[] args) {
-        Target target = new Adapter("Adapter Pattern");
+        Target target = new Adapter(new Adaptee("Adaptee is adapted to Target by Adapter"));
         target.printWeak();
         target.printStrong();
     }
 }
 
 
-
+// Client가 사용하는 New type인 Target
 interface Target {
 
     void printWeak();
@@ -20,28 +20,29 @@ interface Target {
 
 
 
+// Old type인 Adaptee를 New type인 Target에 맞추는 Adapter
 class Adapter implements Target {
 
-    private Adaptee orgin;
+    private Adaptee old;
 
-    public Adapter(String s) {
-        this.orgin = new Adaptee(s);
+    public Adapter(Adaptee old) {
+        this.old = old;
     }
 
     @Override
     public void printWeak() {
-        this.orgin.printParen();
+        this.old.printParen();
     }
 
     @Override
     public void printStrong() {
-        this.orgin.printAster();
+        this.old.printAster();
     }
 
 }
 
 
-
+// Adapter에 의해 맞춰질 Old type
 class Adaptee {
 
     private String s;
