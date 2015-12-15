@@ -7,10 +7,12 @@ public class TemplateCallbackPattern {
     public static void main(String[] args){
         String filePath ="TemplateCallback/java/data.txt";
 
+        Template template = new Template();
+
         // Client 입장에서 파일을 다루면서도,
         // Template 덕분에 try/catch 같은 것을 신경 쓸 필요가 없다.
         // biz 로직만 callback으로 템플릿에게 주입해준다.
-        new Template().processFileContents(filePath, 0, new CallBack<Integer>() {
+        template.processFileContents(filePath, 0, new CallBack<Integer>() {
             @Override
             public Integer processFileContents(String currVal, Integer prevVal) {
                 return Integer.valueOf(currVal) + prevVal;
@@ -19,10 +21,17 @@ public class TemplateCallbackPattern {
 
         // try/catch 불필요
         // 곱하기 로직을 callback으로 템플릿에게 주입
-        new Template().processFileContents(filePath, new Long(1), new CallBack<Long>() {
+        template.processFileContents(filePath, new Long(1), new CallBack<Long>() {
             @Override
             public Long processFileContents(String currVal, Long prevVal) {
                 return Long.valueOf(currVal) * prevVal;
+            }
+        });
+
+        template.processFileContents(filePath, "", new CallBack<String>() {
+            @Override
+            public String processFileContents(String currVal, String prevVal) {
+                return currVal + prevVal;
             }
         });
     }
