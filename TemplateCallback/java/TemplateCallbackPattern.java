@@ -10,21 +10,19 @@ public class TemplateCallbackPattern {
         // Client 입장에서 파일을 다루면서도,
         // Template 덕분에 try/catch 같은 것을 신경 쓸 필요가 없다.
         // biz 로직만 callback으로 템플릿에게 주입해준다.
-        new Template().processFileContents(filePath, 0, new CallBack() {
+        new Template().processFileContents(filePath, 0, new CallBack<Integer>() {
             @Override
-            public int processFileContents(int currVal, int prevVal) {
-                currVal += prevVal;
-                return currVal;
+            public Integer processFileContents(String currVal, Integer prevVal) {
+                return Integer.valueOf(currVal) + prevVal;
             }
         });
 
         // try/catch 불필요
         // 곱하기 로직을 callback으로 템플릿에게 주입
-        new Template().processFileContents(filePath, 1, new CallBack() {
+        new Template().processFileContents(filePath, new Long(1), new CallBack<Long>() {
             @Override
-            public int processFileContents(int currVal, int prevVal) {
-                currVal *= prevVal;
-                return currVal;
+            public Long processFileContents(String currVal, Long prevVal) {
+                return Long.valueOf(currVal) * prevVal;
             }
         });
     }
@@ -39,15 +37,15 @@ class Template {
      * @param initValue
      * @param callback
      */
-    public void processFileContents(String filePath, int initValue, CallBack callback){
+    public <T> void processFileContents(String filePath, T initValue, CallBack<T> callback){
         BufferedReader br = null;
-        int result = initValue;
+        T result = initValue;
         try {
             br = new BufferedReader(new FileReader(filePath));
             String line;
             while ((line = br.readLine()) != null){
                 // 아래의 biz 로직을 callback에게 위임
-                result = callback.processFileContents(Integer.valueOf(line), result);
+                result = callback.processFileContents(line, result);
             }
             System.out.println(result);
         } catch (FileNotFoundException e) {
@@ -66,6 +64,6 @@ class Template {
     }
 }
 
-interface CallBack {
-    int processFileContents(int currVal, int prevVal);
+interface CallBack<T> {
+    T processFileContents(String currVal, T prevVal);
 }
