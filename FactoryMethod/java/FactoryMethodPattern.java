@@ -6,7 +6,7 @@ import java.util.List;
 public class FactoryMethodPattern {
     public static void main(String[] args) {
         Factory factory = new IDCardFactory();
-        Product p1 = factory.create("Phobe");
+        Product p1 = factory.create("Phoebe");
         Product p2 = factory.create("Claudia");
 
         p1.use();
@@ -41,7 +41,9 @@ class IDCardFactory extends Factory {
 
     @Override
     protected void registerProduct(Product product) {
-        owners.add(((IDCard)product).getOwner());
+        String owner = ((IDCard)product).getOwner();
+        owners.add(owner);
+        System.out.println(owner + "의 카드가 등록되었습니다.");
     }
 
     public List getOwners() {
