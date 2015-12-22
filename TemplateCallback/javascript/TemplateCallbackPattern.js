@@ -28,7 +28,9 @@ var template = {
 
 (function(){
     var filePath = "TemplateCallback/java/data.txt";
-    var lines =
+
+    // 파일을 읽고 자원을 정리하는 로직을 반복할 필요 없이
+    // 파일을 읽은 후 처리해야 하는 biz 로직만 콜백 함수로 전달
     template.processFile(filePath, 0, function(currVal, prevVal){
         return currVal + prevVal;
     });
