@@ -1,5 +1,26 @@
 package Iterator.java;
 
+public class IteratorPattern {
+
+    public static void main(String[] args) {
+        BookShelf bookShelf = new BookShelf(4);
+        bookShelf.appendBook(new Book("살아있는 것은 다 행복하라"));
+        bookShelf.appendBook(new Book("60분 부모"));
+        bookShelf.appendBook(new Book("리만가설"));
+        bookShelf.appendBook(new Book("건투를 빈다"));
+
+        Iterator it = bookShelf.iterator();
+        // bookshelf의 내부에 list로 구현되어있는지 배열로 구현되어 있는지
+        // 알 필요 없이 haxNext(), next()로 사용
+        while ( it.hasNext() ) {
+            Book book = (Book)it.next();
+            System.out.println(book.getName());
+        }
+    }
+}
+
+
+
 interface Iterator {
     boolean hasNext();
     Object next();
@@ -88,19 +109,4 @@ class Book {
     }
 }
 
-public class IteratorPattern {
 
-    public static void main(String[] args) {
-        BookShelf bookShelf = new BookShelf(4);
-        bookShelf.appendBook(new Book("살아있는 것은 다 행복하라"));
-        bookShelf.appendBook(new Book("60분 부모"));
-        bookShelf.appendBook(new Book("리만가설"));
-        bookShelf.appendBook(new Book("건투를 빈다"));
-
-        Iterator it = bookShelf.iterator();
-        while ( it.hasNext() ) {
-            Book book = (Book)it.next();
-            System.out.println(book.getName());
-        }
-    }
-}
