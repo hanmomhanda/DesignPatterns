@@ -15,10 +15,10 @@ public class CompositePattern {
         // 요구사항 변경에 의해 나중에 추가
 //        Link link1 = new Link("link1");
 
-        Composite composite1 = new Composite("List1");
-        Composite composite2 = new Composite("List2");
+        Composite composite1 = new Composite("Composite1");
+        Composite composite2 = new Composite("Composite2");
 
-        Composite composite3 = new Composite("List3");
+        Composite composite3 = new Composite("Composite3");
 
         composite1.add(leaf1).add(leaf2);
         // 요구사항 변경에 의해 나중에 추가
@@ -72,7 +72,7 @@ class Composite implements Component {
         Iterator<Component> iterator = components.iterator();
         while (iterator.hasNext()) {
             sb.append(iterator.next().getValue());
-            if (iterator.hasNext()) sb.append(", ");
+            if (iterator.hasNext()) sb.append(",");
         }
         sb.append("]");
         return sb.toString();
