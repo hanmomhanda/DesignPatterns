@@ -14,14 +14,14 @@ class On(State):
         self.next_state = Off()
     def apply_next_state(self, context):
         context.set_state(self.next_state)
-        print "====== Light goes Off"
+        print("====== Light goes Off")
 
 class Off(State):
     def __init__(self):
         self.next_state = On()
     def apply_next_state(self, context):
         context.set_state(self.next_state)
-        print "Light goes ON ======"
+        print("Light goes ON ======")
 
 class Light:
     def __init__(self):

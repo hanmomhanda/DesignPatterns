@@ -21,24 +21,28 @@ class Fighter:
 
 
 def flying_strategy():
-    print "FLYING..."
+    print( "FLYING...")
+
 
 def walking_strategy():
-    print "WALKING..."
+    print(( "WALKING..."))
+
 
 def crawling_strategy():
-    print "CRAWLING..."
+    print( "CRAWLING...")
 
 
 
 def kick_strategy():
-    print "kick!!!"
+    print( "kick!!!")
+
 
 def punch_strategy():
-    print "punch!!!"
+    print( "punch!!!")
+
 
 def tackle_strategy():
-    print "tackle!!!"
+    print( "tackle!!!")
 
 
 
@@ -47,22 +51,20 @@ def run():
 
     fighter.set_move_strategy(flying_strategy)
     fighter.set_attack_strategy(kick_strategy)
-    print "===== Flying + Kick ====="
+    print( "===== Flying + Kick =====")
     fighter.move()
     fighter.attack()
 
     fighter.set_move_strategy(walking_strategy)
     fighter.set_attack_strategy(punch_strategy)
-    print "===== Walking + Punch ====="
+    print( "===== Walking + Punch =====")
     fighter.move()
     fighter.attack()
 
     fighter.set_move_strategy(crawling_strategy)
     fighter.set_attack_strategy(tackle_strategy)
-    print "===== Crawling + Tackle ====="
+    print( "===== Crawling + Tackle =====")
     fighter.move()
     fighter.attack()
-
-
 
 run()

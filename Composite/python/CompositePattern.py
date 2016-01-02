@@ -54,6 +54,6 @@ def run():
 
     result = composite3.get_value()
 
-    print result
+    print(result)
 
 run()
