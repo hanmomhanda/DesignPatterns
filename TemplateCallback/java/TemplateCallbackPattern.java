@@ -5,7 +5,7 @@ import java.io.*;
 public class TemplateCallbackPattern {
 
     public static void main(String[] args){
-        String filePath ="TemplateCallback/java/data.txt";
+        String filePath = "TemplateCallback/data.txt";
 
         Template template = new Template();
 
