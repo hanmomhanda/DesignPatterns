@@ -47,10 +47,13 @@ class Template {
      * @param callback
      */
     public <T> void processFile(String filePath, T initValue, CallBack<T> callback){
+        FileReader fr = null;
         BufferedReader br = null;
+
         T result = initValue;
         try {
-            br = new BufferedReader(new FileReader(filePath));
+            fr = new FileReader(filePath);
+            br = new BufferedReader(fr);
             String line;
             while ((line = br.readLine()) != null){
                 // 아래의 biz 로직을 callback에게 위임
@@ -62,6 +65,14 @@ class Template {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
+            if (fr != null) {
+                try {
+                    fr.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
             if (br != null) {
                 try {
                     br.close();
