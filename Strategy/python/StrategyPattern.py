@@ -25,7 +25,7 @@ def flying_strategy():
 
 
 def walking_strategy():
-    print(( "WALKING..."))
+    print( "WALKING...")
 
 
 def crawling_strategy():
