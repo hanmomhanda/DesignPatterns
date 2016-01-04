@@ -12,8 +12,8 @@ public class VisitorPattern {
         elements.add(new CurlyBraceElement("CurlyBrace2"));
         elements.add(new BracketElement("Bracket2"));
         elements.add(new CurlyBraceElement("CurlyBrace3"));
+        elements.add(new BracketElement("Bracket3"));
         elements.add(new BracketElement("Bracket4"));
-        elements.add(new BracketElement("Bracket5"));
         // 요구사항 변경으로 나중에 추가
 //        elements.add(new AsteriskElement("Asterisk1"));
         elements.add(new CurlyBraceElement("CurlyBrace4"));

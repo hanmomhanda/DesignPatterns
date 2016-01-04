@@ -61,8 +61,8 @@ var uppercaseVisitor = function(element) {
     elements.push(new CurlyBraceElement("CurlyBrace2"));
     elements.push(new BracketElement("Bracket2"));
     elements.push(new CurlyBraceElement("CurlyBrace3"));
+    elements.push(new BracketElement("Bracket3"));
     elements.push(new BracketElement("Bracket4"));
-    elements.push(new BracketElement("Bracket5"));
     // 요구사항 변경으로 나중에 추가
     //elements.push(new AsteriskElement("Asterisk1"));
     elements.push(new CurlyBraceElement("CurlyBrace4"));
