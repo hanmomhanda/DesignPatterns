@@ -29,19 +29,51 @@ developer.go2Sleep = function(){
     console.log("***** Sweet Dream *****");
 };
 
+var student = Object.create(template);
+student.wakeUp = function(){
+    console.log("##### Wake Up by Alarm #####");
+};
+student.go2Work = function(){
+    console.log("^^ Please, no exam today~~");
+};
+student.workHard = function(){
+    console.log("^^^^^ Damn, I forgot again~~");
+};
+student.comeback2Home = function(){
+    console.log("^ Don't worry, I am still young...");
+};
+student.go2Sleep = function(){
+    console.log("***** Sweet Dream *****");
+};
+
+// 요구사항 변경에 의해 나중에 추가
+var theMan = Object.create(template);
+theMan.wakeUp = function(){
+    console.log("##### Wake Up by Alarm #####");
+};
+theMan.go2Work = function(){
+    console.log("!! Oh, Happy day~~");
+};
+theMan.workHard = function(){
+    console.log("!!!!! I'm right, you are wrong!!");
+};
+theMan.comeback2Home = function(){
+    console.log("! It was a really good day...");
+};
+theMan.go2Sleep = function(){
+    console.log("***** Sweet Dream *****");
+};
 
 
 (function(){
     console.log("======= Template for Developer =======");    
     developer.showDailyLife();
-    //
-    //console.log("======= Template for Student =======");
-    //var student = new Student();
-    //student.showDailyLife();
 
-    //// 요구사항 변경에 의해 다른 Template 인스턴스가 추가되어도
-    //// 호출 방식은 변하지 않음
-    //console.log("======= Template for TheMan =======");
-    //var theMan = new TheMan();
-    //theMan.showDailyLife();
+    console.log("======= Template for Student =======");
+    student.showDailyLife();
+
+    // 요구사항 변경에 의해 다른 Template 인스턴스가 추가되어도
+    // 호출 방식은 변하지 않음
+    console.log("======= Template for TheMan =======");
+    theMan.showDailyLife();
 })();
