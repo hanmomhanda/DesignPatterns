@@ -8,16 +8,37 @@ public class ProxyPattern {
     public static void main(String[] args) {
 
         System.out.println("======= Example 1 =======");
-        Target image1 = new Proxy("Image01.jpg");
-        image1.displayImage();
-        image1.displayImage();
-        image1.displayImage();
+        Client client1 = new Client();
+        client1.setTarget(new Proxy("Image01.jpg"));
+        client1.doSomethingWithTarget();
+        client1.doSomethingWithTarget();
+        client1.doSomethingWithTarget();
+
 
         System.out.println("======= Example 2 =======");
-        Target image2 = new Proxy("WallPaper.png");
-        image2.displayImage();
-        image2.displayImage();
-        image2.displayImage();
+        Client client2 = new Client();
+        client2.setTarget(new Proxy("WallPaper.png"));
+        client2.doSomethingWithTarget();
+        client2.doSomethingWithTarget();
+        client2.doSomethingWithTarget();
+    }
+}
+
+
+
+class Client {
+    // 클라이언트 입장에서는 Target만 알 뿐
+    // 그것이 Proxy인지 RealTarget인지 알지 못한다.
+    private Target target;
+
+    public Client() {}
+
+    public void setTarget(Target target) {
+        this.target = target;
+    }
+
+    public void doSomethingWithTarget() {
+        target.displayImage();
     }
 }
 
