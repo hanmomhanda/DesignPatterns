@@ -9,9 +9,11 @@ public class CommandPattern {
 
         button.setCommand(new TurnOffCommand(light));
         button.pressed();
+        button.undoPressed();
 
         button.setCommand(new TurnOnCommand(light));
         button.pressed();
+        button.undoPressed();
     }
 }
 
@@ -28,6 +30,8 @@ class Button {
     public void pressed() {
         command.execute();
     }
+
+    public void undoPressed() { command.undo(); }
 }
 
 // Receiver
@@ -41,11 +45,15 @@ class Light {
         System.out.println("_____ Light is OFF _____");
     }
 
+    public void undo() {
+        System.out.println("%%%%% UNDO %%%%%");
+    }
 }
 
 // Command
 interface Command {
     void execute();
+    void undo();
 }
 
 class TurnOnCommand implements Command {
@@ -60,6 +68,11 @@ class TurnOnCommand implements Command {
     public void execute() {
         light.turnOn();
     }
+
+    @Override
+    public void undo() {
+        light.undo();
+    }
 }
 
 class TurnOffCommand implements Command {
@@ -73,6 +86,11 @@ class TurnOffCommand implements Command {
     @Override
     public void execute() {
         light.turnOff();
+    }
+
+    @Override
+    public void undo() {
+        light.undo();
     }
 }
 
