@@ -3,7 +3,7 @@ class Target:
         self.file_name = file_name
 
     def display_image(self):
-        pass
+        raise NotImplementedError
 
 
 class RealTarget(Target):

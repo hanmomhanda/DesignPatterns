@@ -1,6 +1,6 @@
 class State:
     def apply_next_state(self, context):
-        pass
+        raise NotImplementedError
 
 """
 On과 Off가 상호 참조를 하게류되서 무한루프 발생

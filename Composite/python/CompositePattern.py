@@ -3,7 +3,7 @@ class Component:
         self.name = name
 
     def get_value(self):
-        pass
+        raise NotImplementedError
 
 
 class Leaf(Component):

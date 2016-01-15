@@ -6,7 +6,7 @@ class Element:
         visitor(self)
 
     def do_element_thing(self):
-        pass
+        raise NotImplementedError
 
 
 class BracketElement(Element):

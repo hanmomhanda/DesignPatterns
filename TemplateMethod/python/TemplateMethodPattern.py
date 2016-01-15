@@ -8,13 +8,13 @@ class Template:
         print("##### Wake Up by Alarm #####")
 
     def go2_work(self):
-        pass
+        raise NotImplementedError
 
     def work_hard(self):
-        pass
+        raise NotImplementedError
 
     def comeback2_home(self):
-        pass
+        raise NotImplementedError
 
     @staticmethod
     def go2_sleep():
