@@ -44,6 +44,5 @@ test(); // function a가 출력된다.
 // Window.prototype.a = 2를 지우고 실행하면 1이 출력
 
 console.log("=======================");
-//console.log(global);
 console.log(global.__proto__ === Object.prototype);
 console.log(global.__proto__.__proto__ === Object.prototype);
