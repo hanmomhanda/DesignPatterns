@@ -11,6 +11,9 @@ class Subject:
 
     def say_something(self, something):
         print("+++++" + self.name + " : " + something + "+++++")
+        self.notify_all()
+
+    def notify_all(self):
         for e in self.observer_set:
             e.notified()
 
