@@ -24,7 +24,7 @@ function Observer(name) {
     this.name = name || "default";
 }
 Observer.prototype.notified = function() {
-    throw new Error("This method should be overriden.");
+    throw new Error("This method should be overridden.");
 };
 
 function Child(name) {
