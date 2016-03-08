@@ -75,7 +75,6 @@ Composite.prototype.getValue = function(){
               .add(composite1)
               .add(leaf2)
               .add(leaf3)
-        .add([0])
               .add(composite2)
               .add(leaf4);
 
