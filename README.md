@@ -1,5 +1,5 @@
-# Polyglot Design Patterns
+# Learning Languages by Implementing Design Patterns
 
-Comparing Design Patterns in Different Languages
-
-서로 다른 언어로 구현한 디자인 패턴
+- Java
+- JavaScript
+- Python
