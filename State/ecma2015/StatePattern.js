@@ -1,6 +1,7 @@
+'use strict';
 class Light {
     constructor() {
-        this.state = 'off'
+        this.state = off;
     }
 
     triggerStateChange() {
@@ -12,27 +13,14 @@ class Light {
     }
 }
 
-var Light = function(){
-    var _state = off,
-        self = this;
-    this.triggerStateChange = function(){
-        _state.applyNextState(self);
-    };
-    this.setState = function(state){
-        _state = state;
-    };
-};
-
-
-
-var off = {
+let off = {
     applyNextState: function(context){
         context.setState(on);
         console.log("Light goes ON ======");
     }
 };
 
-var on = {
+let on = {
     applyNextState: function(context){
         // On인 상태에서 호출되면 Off 모드로 상태 변경
         context.setState(off);
@@ -53,11 +41,9 @@ var on = {
 //    }
 //};
 
-
-
-(function(){
-    var light = new Light();
-
+(() => {
+    "use strict";
+    let light = new Light();
     // Strategy 패턴에서는 Context에 주입해 줄 Strategy를
     // Client가 알고, Client가 직접 Context에게 Strategy를 주입하지만
     // State 패턴에서는 Context에 주입해 줄 State를
@@ -71,3 +57,4 @@ var on = {
     light.triggerStateChange();
     light.triggerStateChange();
 })();
+
