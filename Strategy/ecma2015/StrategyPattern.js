@@ -1,61 +1,71 @@
-var Fighter = function() {
-    var _movingStrategy, _attackStrategy;
-    this.setMoveStrategy = function(movingStrategy) {
-        _movingStrategy = movingStrategy;
-    },
-    this.setAttackStrategy = function(attackStrategy) {
-        _attackStrategy = attackStrategy;
-    },
-    this.move = function() {
-        _movingStrategy();
-    },
-    this.attack = function() {
-        _attackStrategy();
-    };
-};
+"use strict";
+class Fighter {
+
+    constructor() {
+        this.moveStrategy = null;
+        this.attackStrategy = null;
+    }
+
+    setMoveStrategy(moveStrategy) {
+        this.moveStrategy = moveStrategy;
+    }
+
+    setAttackStrategy(attackStrategy) {
+        this.attackStrategy = attackStrategy;
+    }
+
+    move() {
+        this.moveStrategy();
+    }
+
+    attack() {
+        this.attackStrategy();
+    }
+}
 
 
 
-var flyingStrategy = function() {
+let flyingStrategy = () => {
     console.log("FLYING...");
 };
-var walkingStrategy = function() {
+
+let walkingStrategy = () => {
     console.log("WALKING...");
 };
 //// 요구 사항 변경에 의해 나중에 추가
-//var crawlingStrategy = function() {
+//let crawlingStrategy = () => {
 //    console.log("CRAWLING...");
 //};
 
 
 
-var kickStrategy = function() {
+let kickStrategy = () => {
     console.log("kick!!!");
 };
-var punchStrategy = function() {
+
+let punchStrategy = () => {
     console.log("punch!!!");
 };
 //// 요구 사항 변경에 의해 나중에 추가
-//var tackleStrategy = function() {
+//let tackleStrategy = () => {
 //    console.log("tackle!!!");
 //};
 
-
-
-(function() {
-    var fighter = new Fighter();
+(() => {
+    let fighter = new Fighter();
 
     console.log("===== Flying + Kick =====");
-    // 이동이나 공격전략이 어떻게 변경되도 아래의 코드는 변하지 않는다.
     fighter.setMoveStrategy(flyingStrategy);
     fighter.setAttackStrategy(kickStrategy);
+    // 이동이나 공격전략이 어떻게 변경되도 아래의 코드는 변하지 않는다.
     fighter.move();
     fighter.attack();
 
+
     console.log("===== Walking + Punch =====");
-    // 이동이나 공격전략이 어떻게 변경되도 아래의 코드는 변하지 않는다.
     fighter.setMoveStrategy(walkingStrategy);
     fighter.setAttackStrategy(punchStrategy);
+    // 이동이나 공격전략이 어떻게 변경되도 아래의 코드는 변하지 않는다.
     fighter.move();
     fighter.attack();
 
@@ -67,4 +77,5 @@ var punchStrategy = function() {
     //// 이동이나 공격전략이 어떻게 변경되도 아래의 코드는 변하지 않는다.
     //fighter.move();
     //fighter.attack();
+
 })();
