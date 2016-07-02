@@ -12,25 +12,25 @@ public class StrategyPattern {
         PunchStrategy punchStrategy = new PunchStrategy();
 
 
+        System.out.println("===== Flying + Kick =====");
         fighter.setMoveStrategy(flyingStrategy);
         fighter.setAttackStrategy(kickStrategy);
-        System.out.println("===== Flying + Kick =====");
         // 이동이나 공격전략이 어떻게 변경되도 아래의 코드는 변하지 않는다.
         fighter.move();
         fighter.attack();
 
+        System.out.println("===== Walking + Punch =====");
         fighter.setMoveStrategy(walkingStrategy);
         fighter.setAttackStrategy(punchStrategy);
-        System.out.println("===== Walking + Punch =====");
         // 이동이나 공격전략이 어떻게 변경되도 아래의 코드는 변하지 않는다.
         fighter.move();
         fighter.attack();
 
 //        // 요구 사항 변경에 의해 새로운 전략이 추가되어도
 //        //  fighter.move(), fighter.attack()은 변하지 않음
+//        System.out.println("===== Crawl + Tackle =====");
 //        fighter.setMoveStrategy(new CrawlingStrategy());
 //        fighter.setAttackStrategy(new TackleStrategy());
-//        System.out.println("===== Crawl + Tackle =====");
 //        // 이동이나 공격전략이 어떻게 변경되도 아래의 코드는 변하지 않는다.
 //        fighter.move();
 //        fighter.attack();
