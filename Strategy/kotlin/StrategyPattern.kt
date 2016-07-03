@@ -4,7 +4,7 @@ package Strategy.kotlin
  * Created by hanmomhanda on 2016-06-25.
  */
 fun main(args: Array<String>) {
-    
+
     val fighter: Fighter = Fighter()
 
     println("===== Flying + Kick =====")
